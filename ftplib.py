@@ -123,10 +123,12 @@ else:
             return self.__class__(s), addr
 
         def bind(self, addr):
-            return self._sock.bind(_resolve_addr(addr))
+            # changed for PicoW ... was return self._sock.bind(_resolve_addr(addr))
+            return self._sock.bind(addr)
 
         def connect(self, addr):
-            return self._sock.connect(_resolve_addr(addr))
+            # changed for PicoW ... return self._sock.connect(_resolve_addr(addr))
+            return self._sock.connect(addr)
 
         def recv(self, size):
             if hasattr(self._sock, 'recv'):
@@ -351,7 +353,10 @@ class FTP:
             code = line[:3]
             while 1:
                 nextline = self.getline()
+                #TODO evaluate change suggest by @polebridge
+                #type missmatch bytes and str suggested fix:- "line = line + "\n" + nextline"
                 line = line + (b'\n' + nextline)
+
                 if nextline[:3] == code and \
                         nextline[3:4] != '-':
                     break

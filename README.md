@@ -30,4 +30,4 @@ directory for esp8266-specific instructions. This version also works with the
 
 ### Notes for Pic W workaround prior to availability of universal solution
 
-TODO add notes here
+The calls to socket.bind(...) and socket.connect(...) are now in a form expected by PicoW
