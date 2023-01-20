@@ -1,6 +1,8 @@
 # micropython-ftplib
 
-An FTP client library for MicroPython.
+## Workaround with changes necessary to make work on Pico W
+
+### An FTP client library for MicroPython.
 
 This is an adaption of the [ftplib] module from the CPython standard library to
 MicroPython. Apart from making it compatible with the `socket` module
@@ -25,3 +27,7 @@ directory for esp8266-specific instructions. This version also works with the
 
 [ftplib]: https://docs.python.org/3/library/ftplib.html
 [pyftpdlib]: https://github.com/giampaolo/pyftpdlib/
+
+### Notes for Pic W workaround prior to availability of universal solution
+
+TODO add notes here
